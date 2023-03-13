@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -9,7 +10,7 @@ const Signup = () => {
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="name">
-                <i class="zmdi zmdi-account"></i> Name
+                <i className="zmdi zmdi-account"></i> Name
               </label>
               <input
                 type="text"
@@ -21,11 +22,15 @@ const Signup = () => {
               />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="inputPassword4">Email</label>
+              <label htmlFor="inputPassword4">
+                <i className="zmdi zmdi-email"></i> Email
+              </label>
+
               <input
                 type="email"
                 className="form-control"
-                id="inputPassword4"
+                id="email"
+                name="email"
                 autoComplete="off"
                 placeholder="Email"
               />
@@ -33,45 +38,57 @@ const Signup = () => {
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label htmlFor="inputEmail4">Email</label>
+              <label htmlFor="phone">
+                <i className="zmdi zmdi-phone-in-talk"></i> Mobile number
+              </label>
               <input
-                type="email"
+                type="number"
                 className="form-control"
                 id="inputEmail4"
+                name="phone"
                 autoComplete="off"
-                placeholder="Email"
+                placeholder="phone"
               />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="inputPassword4">Password</label>
+              <label htmlFor="inputPassword4">
+                <i className="zmdi zmdi-slideshow"></i> Your profession
+              </label>
               <input
-                type="password"
+                type="text"
                 className="form-control"
-                id="inputPassword4"
+                id="work"
                 autoComplete="off"
-                placeholder="Password"
+                name="work"
+                placeholder="work"
               />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label htmlFor="inputEmail4">Password</label>
+              <label htmlFor="inputEmail4">
+                <i className="zmdi zmdi-lock"></i> Password
+              </label>
               <input
                 type="Password"
                 className="form-control"
-                id="inputEmail4"
+                id="password"
+                name="password"
                 autoComplete="off"
                 placeholder="Password"
               />
             </div>
             <div className="form-group col-md-6">
-              <label htmlFor="inputPassword4">Confirm Password</label>
+              <label htmlFor="cpassword">
+                <i className="zmdi zmdi-lock"></i> Confirm Password
+              </label>
               <input
                 type="password"
                 className="form-control"
-                id="inputPassword4"
+                id="cpassword"
+                name="cpassword"
                 autoComplete="off"
-                placeholder="Password"
+                placeholder="Confirm Password"
               />
             </div>
           </div>
@@ -79,6 +96,9 @@ const Signup = () => {
           <button type="submit" className="btn btn-primary">
             Sign up
           </button>
+          <NavLink to="/login" className="ml-4">
+            I am already Sign up
+          </NavLink>
         </form>
       </div>
     </>
