@@ -33,28 +33,31 @@ const Contact = () => {
               <input
                 type="text"
                 className="form-control"
+                required={true}
                 placeholder="Your name"
               />
             </div>
             <div className="col">
               <input
-                type="text"
+                type="email"
                 className="form-control"
+                required={true}
                 placeholder="Your email"
               />
             </div>
             <div className="col">
               <input
-                type="text"
+                type="number"
                 className="form-control"
+                required={true}
                 placeholder="Your phone number"
               />
             </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="exampleFormControlTextarea1"></label>
+          <div className="form-group mt-4">
             <textarea
               className="form-control"
+              placeholder="Message"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
