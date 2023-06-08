@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Signup = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    work: "",
+    password: "",
+    cpassword: "",
+  });
+  let name, value;
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+    setUser({ ...user, [name]: value });
+  };
+
   return (
     <>
       <div className="container mt-5">
@@ -17,6 +33,8 @@ const Signup = () => {
                 name="name"
                 className="form-control"
                 id="name"
+                value={user.name}
+                onChange={handleInputs}
                 autoComplete="off"
                 placeholder="Name"
               />
@@ -31,6 +49,8 @@ const Signup = () => {
                 className="form-control"
                 id="email"
                 name="email"
+                value={user.email}
+                onChange={handleInputs}
                 autoComplete="off"
                 placeholder="Email"
               />
@@ -46,6 +66,8 @@ const Signup = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="phone"
+                value={user.phone}
+                onChange={handleInputs}
                 autoComplete="off"
                 placeholder="phone"
               />
@@ -58,8 +80,10 @@ const Signup = () => {
                 type="text"
                 className="form-control"
                 id="work"
-                autoComplete="off"
                 name="work"
+                value={user.work}
+                onChange={handleInputs}
+                autoComplete="off"
                 placeholder="work"
               />
             </div>
@@ -74,6 +98,8 @@ const Signup = () => {
                 className="form-control"
                 id="password"
                 name="password"
+                value={user.password}
+                onChange={handleInputs}
                 autoComplete="off"
                 placeholder="Password"
               />
@@ -87,6 +113,8 @@ const Signup = () => {
                 className="form-control"
                 id="cpassword"
                 name="cpassword"
+                value={user.cpassword}
+                onChange={handleInputs}
                 autoComplete="off"
                 placeholder="Confirm Password"
               />
